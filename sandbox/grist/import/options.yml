@@ -1,0 +1,15 @@
+
+encoding:
+  type: ["string", "null"]
+  default: "utf8"
+  descirption: "specify the encoding of the file"
+
+start:
+  type: "int"
+  default: 0
+  description: "specify the first column to extract"
+
+end:
+  type: ["int", "null"]
+  default: null
+  description: "specify the last column to extract. `Null` means the last"
