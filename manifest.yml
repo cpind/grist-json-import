@@ -1,34 +1,29 @@
-# name is a unique identifier.
-name: Json import
+# some of the field refers to npm's package.json specification
+# documentation can be found here: https://docs.npmjs.com/files/package.json
 
-description: A Plugin that let import json file into Grist
+# the plugin's name: refer to npm's for rules
+# required
+name: json-import
 
-# either a single author or a list of author
-author:
-  name: cpindat
-  mail: cpindat@getgrist.com
-  website: http://github.com/cpind
-
-repository:
-  type: git
-  # TODO: create the repo
-  url: https://github.com/cpind/grist-json-import
-
+# semver compatible version: refer to npm's
+# required
 version: 0.0.0
 
-engines:
-  python: 2.7
-  grist: *
+# refer to npm's
+description: A Plugin that let import json file into Grist
 
-contributions:
-  file_importer:
-    file_extensions: [json]
+# refer to npm's
+author:
+
+  name    : cyprien
+  mail    : cyprien@getgrist.com
+  website : http://github.com/cpind
+
+# list contributions points of the plugins
+contributes:
+
+  fileImporters:
+
+    fileExtensions : [json]
     # script is run in the sandbox and must expose the import file interface
-    script: src/import/import-json.py
-    options: src/import/options.yml
-  configuration:
-    # following settings is for demonstration purposes, and not really relevant for the task at stake
-    consoleLog:
-      type: Boolean
-      default: false
-      description: Log extracted entries on the javascript console
+    script          : sandbox/import_json.py
